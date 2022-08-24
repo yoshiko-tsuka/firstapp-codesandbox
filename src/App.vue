@@ -6,7 +6,7 @@
       placeholder="Enter your birthday here"
     />
     <p>
-      Days since my birthday: <strong>{{ daysSinceBirth }}</strong>
+      私の誕生日から何日？: <strong>{{ daysSinceBirth }}</strong>
     </p>
   </div>
 </template>
@@ -15,7 +15,7 @@
 export default {
   data() {
     return {
-      birthdate: null
+      birthdate: null,
     };
   },
   computed: {
@@ -23,7 +23,7 @@ export default {
       if (!this.birthdate) return 0;
 
       return this.daysBetween(new Date(this.birthdate), new Date());
-    }
+    },
   },
   methods: {
     daysBetween(date1, date2) {
@@ -39,8 +39,8 @@ export default {
 
       // Convert back to days and return
       return Math.round(difference_ms / one_day);
-    }
-  }
+    },
+  },
 };
 </script>
 
